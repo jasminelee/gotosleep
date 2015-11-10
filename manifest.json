@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Go to Sleep",
-  "description": "Samuel L. Jackson reminds you when it's your bedtime",
+  "description": "Samuel L. Jackson reminds you when it's your bedtime. Original book by Adam Mansbach.",
   "version": "1.0",
 
   "background": {
@@ -10,7 +10,8 @@
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Go to Sleep!"
+    "default_title": "Go to Sleep!",
+    "default_popup": "popup.html"
   },
 
   "permissions": [
