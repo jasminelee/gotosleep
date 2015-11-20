@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Go to Sleep",
-  "description": "Samuel L. Jackson reminds you when it's your bedtime. Original book by Adam Mansbach.",
+  "description": "Samuel L. Jackson reminds you when it's your bedtime. Story by Adam Mansbach.",
   "version": "1.0",
 
   "background": {
