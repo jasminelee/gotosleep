@@ -1,6 +1,6 @@
 var now = new Date();
 var millisTill11 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 0, 0, 0) - now;
-var halfHour = 30*60*1000 // minutes * seconds * milliseconds 
+var halfHour = 15*60*1000 // minutes * seconds * milliseconds 
 
 var files = [];
 function addFiles(){
@@ -24,15 +24,15 @@ var text = [
 "Driving While Sleepy: after 22 hours of going without sleep, a sleep deprived person's driving is worse than someone who is legally drunk. (Williamson, Feyer, 2000.)",
 "Health: sleep contributes to the maintenance of the immune system. (Dinges, et. al. 1995)", 
 "Beauty Sleep: people who get eight hours of sleep appear healthier, more rested, and more attractive than those who stay up all night. (Axelsson, 2010).", 
-"Sleep Deprivation: because sleep deprivation may be a factor in cancer risk, the World Health Organization classified night shift working as a carcinogen. "
-"Creative Abstraction: sleep builds remote associations; it extracts overarching rules and abstracts insights into problems. (Walker, et. al., 2007).", 
+"Sleep Deprivation: because sleep deprivation may be a factor in cancer risk, the World Health Organization classified night shift working as a carcinogen. ",
+"Creative Abstraction: sleep builds remote associations; it extracts overarching rules and abstracts insights into problems. (Walker, et. al., 2007)." 
 ]
 
 var messages = [];
 
 function addSleepmessages(){
   for (i = 0; i <= 12; i++) {
-    var opt = {type: "basic", title: "Go to Sleep", message: text[i], priority:1, iconUrl: "sleep2.png"}
+    var opt = {type: "basic", title: "Go to Sleep", message: text[i], priority:1, iconUrl: "photos/sleep2.png"}
     messages.push(opt);
   }
 }
