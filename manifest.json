@@ -9,9 +9,13 @@
   },
 
   "browser_action": {
-    "default_icon": "photos/icon.png",
+    "default_icon": "photos/icon_final.png",
     "default_title": "Go to Sleep!",
     "default_popup": "popup.html"
+  },
+
+  "icons": {
+    "128":"photos/icon128.png"
   },
 
   "permissions": [

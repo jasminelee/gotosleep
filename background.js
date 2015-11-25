@@ -1,6 +1,6 @@
 var now = new Date();
-var millisTill11 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 0, 0, 0) - now;
-var halfHour = 15*60*1000 // minutes * seconds * milliseconds 
+var millisTill11 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 0, 0, 0) - now;
+var halfHour = 1*30*1000 // minutes * seconds * milliseconds 
 
 var files = [];
 function addFiles(){
