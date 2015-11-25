@@ -3,6 +3,8 @@
   "name": "Go to Sleep",
   "description": "Samuel L. Jackson reminds you when it's your bedtime. Story by Adam Mansbach.",
   "version": "1.0",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+
 
   "background": {
     "scripts": ["background.js"]
@@ -15,12 +17,13 @@
   },
 
   "icons": {
-    "128":"photos/icon128.png"
+    "128":"photos/icon128.jpg"
   },
 
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/",
-    "notifications"
-  ]
+    "notifications",
+    "https://www.google-analytics.com/"
+    ]
 }
