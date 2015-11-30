@@ -49,18 +49,18 @@ function createNotification(file_count){
   }
 
 var file_count = 0
-var halfHour = 1*30*1000 // minutes * seconds * milliseconds 
 
-var d = new Date();
-var h = d.getHours();
-if (h == 21) {
+var now = new Date();
+var millisTill11 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 0, 0, 0)-now;
+var halfHour = 30*60*1000 // minutes * seconds * milliseconds 
+
+setTimeout(function(){
   setInterval(function(){
     createNotification(file_count);
     audioNotification(file_count);
-    file_count += 1;
-    console.log(file_count);
+    file_count += 1
   }, halfHour);
-}
+}, millisTill11);
 
 
 // Standard Google Universal Analytics code
