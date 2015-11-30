@@ -1,21 +1,7 @@
-var now = new Date();
-var millisTill11 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 50, 0, 0); 
-var halfHour = 1*60*1000 // minutes * seconds * milliseconds 
-
-var d = new Date();
-var m = d.getMinutes();
-var h = d.getHours();
-if (h == 20 && m == 38) {
-      // var sound = document.getElementById(sound1);
-      // sound.Play();
-      document.write('<audio id="player" src="Fetty.mp3" >');
-      document.getElementById('player').play();
-    }
-
 var files = [];
 function addFiles(){
   for (i = 1; i <= 13; i++) {
-  files.push(new Audio('sound/sleep'+i+'.m4a'));
+    files.push(new Audio('sound/sleep'+i+'.m4a'));
   }
 }
 
@@ -50,35 +36,39 @@ function addSleepmessages(){
 addSleepmessages();
 
 function audioNotification(file_count){
-    var yourSound = files[file_count%14];
-    yourSound.play();
-    youSound.pause()
+  var yourSound = files[file_count%14];
+  yourSound.play();
 }
 
 function createNotification(file_count){
-    var opt = messages[file_count%14];
-    chrome.notifications.create("notificationName",opt,function(){});
+  var opt = messages[file_count%14];
+  chrome.notifications.create("notificationName",opt,function(){});
 
     //include this line if you want to clear the notification after 5 seconds
     setTimeout(function(){chrome.notifications.clear("notificationName",function(){});},20*1000);
-}
+  }
 
 var file_count = 0
+var halfHour = 1*30*1000 // minutes * seconds * milliseconds 
 
-setTimeout(function(){
+var d = new Date();
+var h = d.getHours();
+if (h == 21) {
   setInterval(function(){
     createNotification(file_count);
     audioNotification(file_count);
-    file_count += 1
+    file_count += 1;
+    console.log(file_count);
   }, halfHour);
-}, millisTill11);
+}
+
 
 // Standard Google Universal Analytics code
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // Note: https protocol here
- 
+
 ga('create', 'UA-41354756-5', 'auto');
 ga('set', 'checkProtocolTask', function(){}); // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
 ga('require', 'displayfeatures');
