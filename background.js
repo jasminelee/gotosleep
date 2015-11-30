@@ -1,6 +1,16 @@
 var now = new Date();
-var millisTill11 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 11, 0, 0, 0) - now;
-var halfHour = 15*60*1000 // minutes * seconds * milliseconds 
+var millisTill11 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 50, 0, 0); 
+var halfHour = 1*60*1000 // minutes * seconds * milliseconds 
+
+var d = new Date();
+var m = d.getMinutes();
+var h = d.getHours();
+if (h == 20 && m == 38) {
+      // var sound = document.getElementById(sound1);
+      // sound.Play();
+      document.write('<audio id="player" src="Fetty.mp3" >');
+      document.getElementById('player').play();
+    }
 
 var files = [];
 function addFiles(){
@@ -42,11 +52,11 @@ addSleepmessages();
 function audioNotification(file_count){
     var yourSound = files[file_count%14];
     yourSound.play();
+    youSound.pause()
 }
 
 function createNotification(file_count){
     var opt = messages[file_count%14];
-    chrome.notifications.create("notificationName",opt,function(){});
     chrome.notifications.create("notificationName",opt,function(){});
 
     //include this line if you want to clear the notification after 5 seconds
@@ -57,7 +67,6 @@ var file_count = 0
 
 setTimeout(function(){
   setInterval(function(){
-    createNotification(file_count);
     createNotification(file_count);
     audioNotification(file_count);
     file_count += 1
